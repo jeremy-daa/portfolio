@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #f3f3f3;
+  --shadow: #121212;
+  --black: #151515;
+  --theme: #470047;
+  --theme-transparent: rgba(71, 0, 71, 0.352);
+}
+
+body {
+  background-image: url(/bg.svg);
+  @apply text-[var(--white)];
+}
+
+.navlink {
+  @apply text-[var(--white)] transition-all duration-300 ease-in-out;
+}
+.navlink::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--white);
+  transition: width 0.3s;
+}
+.navlink:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+.navlink:has(.active)::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.onhover:hover :first-child {
+  @apply border-[var(--white)];
+}
+.onhover div .coolunderline::after {
+  content: "";
+  display: block;
+  width: 0;
+  margin-top: 0.5rem;
+  height: 3px;
+  background: var(--white);
+  transition: width 0.5s;
+}
+
+.onhover:hover div .coolunderline::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.coolborder {
+  position: relative;
+  overflow: hidden;
+}
+.coolborder::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translate(100%);
+}
+.coolborder::after {
+  content: "";
+  right: 0;
+  top: 0;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translate(-100%);
+}
+.coolborder:hover::before {
+  transition: 0.3s transform linear, 0.3s height 0.3s ease-out;
+  height: 100%;
+  border-color: var(--white);
+  transform: translateX(0);
+}
+.coolborder:hover::after {
+  transition: 0.3s transform linear, 0.3s height 0.3s ease-out;
+  height: 100%;
+  border-color: var(--white);
+  transform: translateX(0);
+}
+.pulse:hover {
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.fadein {
+  animation: hide 2s;
+}
+@keyframes hide {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

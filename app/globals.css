@@ -8,6 +8,8 @@
   --black: #151515;
   --theme: #470047;
   --theme-transparent: rgba(71, 0, 71, 0.352);
+  --white-transparent: rgba(243, 243, 243, 0.352);
+  --black-transparent: rgba(21, 21, 21, 0.352);
 }
 
 body {
@@ -69,6 +71,13 @@ body {
   box-sizing: border-box;
   transform: translate(100%);
 }
+.coolborder-parent:hover .coolborder::before {
+  transition: 0.3s transform linear, 0.3s height 0.3s ease-out;
+  height: 100%;
+  border-color: var(--white);
+  transform: translateX(0);
+}
+
 .coolborder::after {
   content: "";
   right: 0;
@@ -81,6 +90,12 @@ body {
   box-sizing: border-box;
   transform: translate(-100%);
 }
+.coolborder-parent:hover .coolborder::after {
+  transition: 0.3s transform linear, 0.3s height 0.3s ease-out;
+  height: 100%;
+  border-color: var(--white);
+  transform: translateX(0);
+}
 .coolborder:hover::before {
   transition: 0.3s transform linear, 0.3s height 0.3s ease-out;
   height: 100%;
@@ -92,20 +107,6 @@ body {
   height: 100%;
   border-color: var(--white);
   transform: translateX(0);
-}
-.pulse:hover {
-  animation: pulse 1.5s infinite;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 .fadein {
   animation: hide 2s;
@@ -120,4 +121,36 @@ body {
   100% {
     opacity: 1;
   }
+}
+.boxshadow {
+  box-shadow: 0 0 5px 0 var(--white);
+  transition: box-shadow 0.3s ease-in-out;
+  @apply rounded-md;
+}
+.boxshadow:hover {
+  box-shadow: 0 0 15px 0 var(--white);
+}
+
+.hoverunderline {
+  position: relative;
+  overflow: hidden;
+}
+.hoverunderline::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--white);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  margin-top: 3px;
+}
+.hoverunderline:hover::before {
+  transform: translateX(0);
+}
+
+.projectcard:hover div {
+  transform: translateY(0);
 }

@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar />
         <Navigation />
-        <main>
+        <main className="md:mt-[6rem] my-[3rem]">
           <Animate>{children}</Animate>
         </main>
       </body>

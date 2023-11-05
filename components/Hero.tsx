@@ -30,8 +30,8 @@ const Hero = () => {
     },
   ];
   return (
-    <div className="relative min-h-[100vh] w-full flex flex-col justify-center items-center mt-[4rem]">
-      <div className="w-fit duration-300 p-7 flex flex-col md:flex-row justify-center items-center gap-16 coolborder onhover">
+    <div className="relative w-full flex flex-col justify-center items-center">
+      <div className="w-fit duration-300 p-8 flex flex-col md:flex-row justify-center items-center md:gap-16 gap-8 coolborder onhover">
         <div className="flex justify-center items-center rounded-full border-4 border-transparent p-2 duration-300">
           <Image
             src="/profile.png"
@@ -41,12 +41,12 @@ const Hero = () => {
             className=" object-contain rounded-full profile-pic z-50 drop-shadow-xl duration-300"
           />
         </div>
-        <div className="flex flex-col justify-start items-start gap-2">
-          <h1 className="text-6xl font-bold bg-gradient-to-l from-fuchsia-900 to-gray-200 bg-clip-text text-transparent py-3 tracking-wide">
-            Hi, I&apos;m
+        <div className="flex flex-col md:justify-start justify-center md:items-start items-center">
+          <h1 className="md:text-2xl text-xl font-bold tracking-widest font-mono md:w-full w-fit">
+            Hi There, I&apos;m
           </h1>
           <h1
-            className="text-6xl font-bold bg-gradient-to-l from-fuchsia-900 to-gray-200 bg-clip-text text-transparent py-3 tracking-wide coolunderline"
+            className="md:text-6xl text-2xl font-bold bg-gradient-to-l from-fuchsia-900 to-gray-200 bg-clip-text text-transparent py-2 tracking-wide coolunderline md:w-full w-fit"
             style={{
               lineHeight: "1.5",
             }}
@@ -54,7 +54,7 @@ const Hero = () => {
             Ermiyas Dagnachew
           </h1>
           <h1
-            className="text-3xl font-base tracking-[5px] font-mono"
+            className="md:text-3xl text-base font-base md:tracking-[5px] tracking-widest font-mono md:w-full w-fit"
             style={{
               lineHeight: "1.5",
             }}
@@ -62,8 +62,8 @@ const Hero = () => {
             A{" "}
             <Typewriter
               words={[
-                "Student at AASTU",
-                "Full-Stack Web Developer",
+                "Sophomore at AASTU",
+                "Full-Stack Developer",
                 "UI/UX Enthusiast",
                 "Baller 🏀🏀",
                 "Gamer 🎮🎮",
@@ -80,16 +80,11 @@ const Hero = () => {
       </div>
       <Link
         href="/Ermiyas_Dagnachew_CV.pdf"
-        className="mt-5 text-2xl font-bold bg-gradient-to-l from-fuchsia-900 to-gray-200 bg-clip-text text-transparent py-3 tracking-wide cursor-pointer duration-300 p-6 border-white border-2 hover:scale-105"
+        className="md:mt-5 mt-3 md:text-2xl text-lg  font-bold bg-gradient-to-l from-fuchsia-900 to-gray-200 bg-clip-text text-transparent py-3 tracking-wide cursor-pointer duration-300 p-6 border-white border-2 hover:scale-105"
       >
         Download CV
       </Link>
-      <div className="w-[60%] flex justify-between items-center p-3 my-10 ">
-        {/* <SocialLink
-          href="mailto:ermiyas.dagnachew@gmail.com"
-          icon={<GoMail />}
-          text="Email"
-        /> */}
+      <div className="md:w-[60%] w-[85%] gap-5 flex md:justify-between justify-center items-center p-3 my-10 md:flex-nowrap flex-wrap">
         {Socials.map((social, index) => (
           <SocialLink
             key={index}

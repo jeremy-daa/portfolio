@@ -6,6 +6,7 @@ import Animate from "@/components/Animate";
 import Navigation from "@/components/Navigation";
 import SuccessModal from "@/components/successModal";
 import FailureModal from "@/components/failureModal";
+import MobileNav from "@/components/MobileNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} relative`}>
         <NavBar />
+        <MobileNav />
         <Navigation />
         <SuccessModal />
         <FailureModal />

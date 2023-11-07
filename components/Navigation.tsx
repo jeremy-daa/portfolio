@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <>
       <Link
-        className="fixed right-5 top-[50%] p-3 rounded-full md:bg-[var(--white)] bg-[var(--white-transparent)] fadein z-50 md:scale-100 scale-75 translate-x-6 md:translate-x-0"
+        className="md:block hidden fixed right-5 top-[50%] p-3 rounded-full md:bg-[var(--white)] bg-[var(--white-transparent)] fadein z-50 md:scale-100 scale-75 translate-x-6 md:translate-x-0"
         href={
           (pathnames.indexOf(pathname) === pathnames.length - 1
             ? pathnames[0]
@@ -25,7 +25,7 @@ const Navigation = () => {
         />
       </Link>
       <Link
-        className="fixed left-5 top-[50%] p-3 rounded-full md:bg-[var(--white)] bg-[var(--white-transparent)] fadein z-50 md:scale-100 scale-75 -translate-x-6 md:translate-x-0"
+        className="md:block hidden fixed left-5 top-[50%] p-3 rounded-full md:bg-[var(--white)] bg-[var(--white-transparent)] fadein z-30 md:scale-100 scale-75 -translate-x-6 md:translate-x-0"
         href={
           (pathnames.indexOf(pathname) === 0
             ? pathnames[pathnames.length - 1]

@@ -60,6 +60,7 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .coolborder::before {
   position: absolute;
   content: "";

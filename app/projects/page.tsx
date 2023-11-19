@@ -31,12 +31,36 @@ const page = () => {
   ];
   const personalProjects: ProjectCardProps[] = [
     {
+      title: "Portfolio",
+      description: [
+        "A portfolio website built with Next.js, Tailwind CSS and Vercel",
+      ],
+      image: "/portfolio.png",
+      link: "https://yirmeyahu.vercel.app/",
+    },
+    {
       title: "Game Trove",
       description: [
         "A game library website built with React, React-Router-DOM, Chakra UI and Vite",
       ],
       image: "/game-trove.png",
       link: "https://game-trove-inky.vercel.app/",
+    },
+    {
+      title: "Candor News",
+      description: [
+        "A news website built with PHP, Vanila CSS, Javascript and MySQL",
+      ],
+      image: "/candor-news.png",
+      link: "https://github.com/jeremy-daa/Candor_News",
+    },
+    {
+      title: "Lambda Blog",
+      description: [
+        "A blog website built with Next.js, Prisma, Firebase and MongoDB",
+      ],
+      image: "/lambda-blog.png",
+      link: "https://lambda-blog.vercel.app/",
     },
   ];
 

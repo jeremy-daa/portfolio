@@ -31,7 +31,7 @@ const Hero = () => {
   ];
   return (
     <div className="relative w-full flex flex-col justify-center items-center">
-      <div className="w-fit duration-300 p-8 flex flex-col md:flex-row justify-center items-center md:gap-16 gap-8 onhover">
+      <div className="w-fit duration-300 p-8 flex flex-col md:flex-row justify-center items-center md:gap-16 gap-8 onhover coolborder">
         <div className="flex justify-center items-center rounded-full border-4 border-transparent p-2 duration-300">
           <Image
             src="/profile.png"

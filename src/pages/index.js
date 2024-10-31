@@ -5,16 +5,18 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import TransitionEffect from "@/components/TransitionEffect";
-import profilePic from "../../public/images/profile/Riley.png";
-
+import profilePic from "../../public/images/profile/Ermiyas.png";
+import ViewCount from "@/components/ViewCount";
 export default function Home() {
   return (
     <>
       <Head>
-        <title>NexTemp Built with Nextjs</title>
+        <title>
+          Ermiyas Dagnachew Amberbir | Full-Stack Developer Portfolio
+        </title>
         <meta
           name="description"
-          content="Next Portfolio, A open-source portfolio theme built with Nextjs"
+          content="Explore the portfolio of Ermiyas Dagnachew Amberbir, a full-stack developer based in Addis Ababa. Specializing in dynamic web solutions that connect people and ideas, Ermiyas combines front-end and back-end expertise to deliver impactful digital experiences."
         />
       </Head>
 
@@ -22,7 +24,7 @@ export default function Home() {
       <article
         className={`flex min-h-screen items-center text-dark dark:text-light sm:items-start`}
       >
-        <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
+        <Layout className="!pt-24 md:!pt-16 sm:!pt-12">
           <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
             <div className="w-1/2 lg:hidden md:flex flex self-center max-h-fit">
               {
@@ -39,20 +41,21 @@ export default function Home() {
             </div>
             <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
               <AnimatedText
-                text="Hey, I’m Riley"
+                text="Hi, I’m Ermiyas"
                 className="!text-left !text-6xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
               />
-              <div className="flex w-1/2 w-full items-center items-start lg:w-full  lg:!justify-center  sm:!justify-center  md:!text-center md:inline-block md:w-full">
+              <div className="flex w-full  items-start lg:w-full  lg:!justify-center  sm:!justify-center  md:!text-center md:inline-block md:w-full">
                 <h2 className="animate-text bg-gradient-to-r from-lightGreen via-lightGreen to-slideGreen bg-clip-text text-transparent font-semibold capitalize !text-5xl xl:!text-4xl lg:!text-4xl md:!text-5xl sm:!text-3xl">
-                  I create engaging web experiences.
+                  I build digital solutions that connect people and ideas.
                 </h2>
               </div>
 
               <p className="my-4 text-base font-medium md:text-sm sm:!text-sm">
-                I'm a front-end web developer at Stellar Innovations, passionate
-                about creating dynamic and user-friendly web experiences. With a
-                keen eye for design and a robust understanding of front-end and
-                back-end technologies.
+                I'm Ermiyas, a Full-Stack Developer based in Addis Ababa. I
+                specialize in building dynamic web applications that prioritize
+                user experience. With a strong foundation in both front-end and
+                back-end technologies, I deliver high-quality, scalable
+                solutions tailored to meet client needs.
               </p>
               <div className="mt-2 flex items-center self-start gap-3 grid-cols-2 lg:self-center">
                 <Link
@@ -82,15 +85,7 @@ export default function Home() {
           </div>
         </Layout>
         <div className="fixed right-8 bottom-8 inline-block md:hidden">
-          <iframe
-            className="iframe"
-            title="Noongar Seasonal Calendar"
-            width="280"
-            height="120"
-            src="https://seasonal-au.netlify.app/"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+          <ViewCount />
         </div>
         <HireMe />
       </article>

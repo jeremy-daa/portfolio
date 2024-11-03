@@ -21,7 +21,6 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
           <a
             className="capitalize text-slideGreen dark:text-primaryDark"
             href={companyLink}
-            target={"_blank"}
           >
             @{company}
           </a>
@@ -58,21 +57,21 @@ const Experience = () => {
 
         <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
           <Details
-            position="Developer"
-            company="Stellar Innovations"
-            time="2020 - 2024"
-            address="200 Innovations st"
-            companyLink="https://github.com/lilxyzz/clay-theme"
-            work="At Stellar Innovations, I serve as a web developer, where I play a crucial role in designing and implementing cutting-edge web solutions. My responsibilities include developing responsive and high-performance websites and applications using technologies such as HTML, CSS, JavaScript, React, and Node.js. I collaborate closely with cross-functional teams to ensure our projects meet the highest standards of functionality and user experience. One of my key achievements at Stellar Innovations has been leading the development of a comprehensive e-commerce platform that significantly enhanced our client's online presence and sales. My work is driven by a passion for continuous learning and innovation, always striving to push the boundaries of what's possible in web development."
+            position="Junior Developer"
+            company="Chiraro Digital Solutions"
+            time="2022 - 2024"
+            address="Addis Ababa, Ethiopia"
+            companyLink="https://chiraro.com"
+            work="As a Junior Developer at Chiraro Digital Solutions, I had the opportunity to work on a variety of projects, from landing pages to full-stack custom web applications. One of the key projects I contributed to was a CRM system tailored for the marketing team to efficiently track outreach efforts. I also worked on the company's landing page alongside a senior developer, where I gained valuable insights into design optimization and effective collaboration. Through these experiences, I developed a stronger understanding of both client needs and technical best practices, and deepened my ability to think critically about user-centric design."
           />
 
           <Details
-            position="Rad Tester"
-            company="Vault Technologies"
-            time="2018 - 2020"
-            address="404 Tech st"
-            companyLink="https://github.com/lilxyzz/holo-theme"
-            work="At Vault Technologies, I worked as a RAD (Rapid Application Development) Tester, where I was responsible for ensuring the quality and functionality of our software applications during the development process. My role involved designing and executing test plans, identifying and documenting bugs, and working closely with developers to resolve issues quickly. This position required a deep understanding of the software development lifecycle and a keen eye for detail to ensure our applications met the highest standards of performance and reliability. My contributions at Vault Technologies helped streamline our development processes and significantly improved the overall quality of our software products."
+            position="Freelance Developer"
+            company="Self-Employed"
+            time="2021 - present"
+            address="Addis Ababa, Ethiopia"
+            companyLink="/"
+            work="As a freelance developer, I’ve had the chance to work on diverse projects, each one teaching me something new. Right now, I’m building an ERP system for medium to large companies—a complex but rewarding project that's pushing me to combine full-stack development skills with cloud solutions. From designing a clean user experience to integrating essential modules like Sales and CRM, this project has shown me how much a well-built platform can simplify business processes. It’s exciting to know the work I’m doing will have a real impact on how companies operate."
           />
         </ul>
       </div>
@@ -89,7 +88,7 @@ const Experience = () => {
           View Projects
         </Link>
         <Link
-          href="/articles/"
+          href="/stories/"
           target={"_self"}
           className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
@@ -97,7 +96,7 @@ const Experience = () => {
             md:p-2 md:px-4 md:text-base
              `}
         >
-          View Articles
+          View Stories
         </Link>
       </div>
     </div>

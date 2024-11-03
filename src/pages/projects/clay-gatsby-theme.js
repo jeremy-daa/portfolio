@@ -105,13 +105,11 @@ export default function About() {
             md:p-2 md:px-4 md:text-base"
                   aria-label="Visit Theme Demo"
                   href="https://clay-theme.netlify.app"
-                  target={"_blank"}
                 >
                   Visit Demo
                 </Link>
                 <Link
                   href="https://github.com/lilxyzz/clay-theme"
-                  target={"_blank"}
                   className="w-10"
                   aria-label="github link"
                 >
@@ -119,7 +117,6 @@ export default function About() {
                 </Link>
                 <Link
                   href="https://dev.to/lilxyzz/clay-theme-unlocking-the-power-of-gatsby-v5-and-netlifycms-with-clay-theme-njn"
-                  target={"_blank"}
                   className="w-10"
                   aria-label="github link"
                 >

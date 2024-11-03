@@ -84,9 +84,8 @@ export default function Home() {
             </div>
           </div>
         </Layout>
-        <div className="fixed right-8 bottom-8 inline-block md:hidden">
-          <ViewCount />
-        </div>
+        <ViewCount />
+
         <HireMe />
       </article>
     </>

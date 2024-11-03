@@ -7,8 +7,13 @@ import Link from "next/link";
 import { useRef } from "react";
 import { HireMe2 } from "@/components/HireMe2";
 
-import proj1 from "../../public/images/projects/clay-theme.png";
-import loading from "../../public/images/articles/GTA6-VICE.gif";
+import chiraroErp from "../../public/images/projects/chiraro-erp.png";
+import portfolio from "../../public/images/projects/portfolio.png";
+import dreamHouseHotel from "../../public/images/projects/dream-house-hotel-and-apartments.png";
+import mettiLegal from "../../public/images/projects/metti-legal.png";
+import tesfayeLaw from "../../public/images/projects/tesfaye-law.png";
+import sawlaTours from "../../public/images/projects/sawla-tours.png";
+import githubProfile from "../../public/images/github.png";
 
 import TransitionEffect from "@/components/TransitionEffect";
 import { motion, useMotionValue } from "framer-motion";
@@ -35,7 +40,6 @@ const MovingImg = ({ title, img, link }) => {
     <>
       <Link
         href={link}
-        target={"_blank"}
         className="relative"
         onMouseMove={handleMouse}
         onMouseLeave={handleMouseLeave}
@@ -139,18 +143,13 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
           {summary}
         </p>
         <div className="mt-2 flex items-center">
-          <Link
-            href={github}
-            target={"_blank"}
-            className="w-10"
-            aria-label="github link"
-          >
+          <Link href={github} className="w-10" aria-label="github link">
             <GithubIcon />
           </Link>
           <Link
             href={link}
-            className="ml-4 rounded-lg
-             bg-dark p-2 px-6 text-lg font-semibold
+            className="ml-4
+             p-2 px-6 text-lg font-semibold
              sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
             dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
@@ -165,7 +164,7 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
   );
 };
 
-const Project = ({ title, type, img, link, tools }) => {
+const Project = ({ title, type, img, link, tools, summary }) => {
   return (
     <article
       className="relative flex w-full flex-col items-center justify-center rounded-2xl  rounded-br-2xl 
@@ -207,12 +206,16 @@ const Project = ({ title, type, img, link, tools }) => {
             {title}
           </h2>
         </Link>
+
+        <p className=" my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">
+          {summary}
+        </p>
         <div className="flex w-full items-center  justify-between">
           <Link
             href={link}
             className="rounded-lg
-             bg-dark mt-2 px-6 py-2 text-lg font-semibold
-             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
+             mt-2 px-6 py-2 text-lg font-semibold
+             sm:px-4 sm:text-base  border-2 border-solid bg-dark
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
             dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
             md:p-2 md:px-4 md:text-base
@@ -231,10 +234,13 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects | By NexTemp</title>
+        <title>
+          Ermiyas Dagnachew Amberbir | Project Portfolio – Innovative Web
+          Solutions
+        </title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Explore the project portfolio of Ermiyas Dagnachew Amberbir, showcasing innovative web solutions that combine Ethiopian ingenuity with modern technology. Discover unique projects crafted with passion, skill, and purpose to bring ideas to life"
         />
       </Head>
 
@@ -244,42 +250,79 @@ export default function Projects() {
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Imagination Transforms the World ✨"
+            text="A Showcase of Vision and Craft 🎨"
             className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
           />
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
             <div className="col-span-12">
               <FeaturedProject
-                type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
-                summary="Image-centric Gatsby theme for publishers, portfolio, photographers blogs and more."
-                img={proj1}
-                date="2023"
-                link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
+                type="ERP Solution"
+                tools="React | Node.js | MongoDB | Next.js"
+                title="Chiraro ERP"
+                summary="A comprehensive ERP solution tailored for medium to large businesses in Ethiopia, streamlining operations and enhancing efficiency. With a user-friendly interface and seamless integration, the platform provides a secure and efficient way to manage business processes. "
+                img={chiraroErp}
+                date="2024"
+                link="https://erp.chiraro.com/"
+                github="https://github.com/jeremy-daa/erp-saas"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
-                img={proj1}
-                date="2023"
-                link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
+                type="Portfolio Website"
+                tools="Next.js | React | Tailwind | JavaScript"
+                title="My Portfolio"
+                summary="Creating my portfolio was a journey of self-discovery and creativity. I wanted to showcase not just my skills but the stories behind each project."
+                img={portfolio}
+                date="2024"
+                link="/"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
-                img={proj1}
+                type="Hotel Website & PMS"
+                tools="HTML | PHP | JavaScript | MySQL"
+                title="Dream House Hotel & Apartments"
+                summary="Developing the website and Property Management System for Dream House Hotel and Apartments was an exciting challenge. I aimed to create a user-friendly platform that not only showcased the hotel’s unique offerings but also streamlined operations for staff."
+                img={dreamHouseHotel}
+                date="2024"
+                link="https://www.apartments.dreamhouse-et.com/"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 mt-24">
+            <div className="col-span-12">
+              <FeaturedProject
+                type="Legal Services Landing Page"
+                tools="React | Next.js | CSS | JavaScript"
+                title="Meti Legal Services"
+                summary="Creating the landing page for Meti Legal Services was a rewarding project that aimed to provide a clear and professional online presence. The site features a user-friendly design that makes it easy for clients to access legal information, get in touch, and explore valuable updates and blog content. "
+                img={mettiLegal} // replace with the actual project image
                 date="2023"
-                link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
+                link="https://www.mettita.com/"
+                github="https://github.com/jeremy-daa/metti_legal/"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                type="Law Firm Landing Page"
+                tools="React | Next.js | CSS | JavaScript"
+                title="Tesfaye Derese Law"
+                summary="Developing the landing page for Tesfaye Derese Law was an enriching experience aimed at establishing a strong online presence. The website features a clean, professional design that allows potential clients to easily navigate legal services, contact the firm, and access informative blog posts."
+                img={tesfayeLaw}
+                date="2024"
+                link="https://tesfaye-derese-law.vercel.app/"
+                github="https://github.com/jeremy-daa/tesfaye-derese-law/"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                type="Tourism Website"
+                tools="Vite | React | Tailwind | Node.JS"
+                title="Sawla Tours"
+                summary="Creating the Sawla Tours website was a pivotal moment in my journey as a developer. This project allowed me to combine my passion for travel with my growing skills in web development. I focused on crafting an engaging and informative platform that showcases the beauty of Ethiopia and its attractions."
+                img={sawlaTours}
+                date="2022"
+                link="https://www.sawlatours.com/"
               />
             </div>
           </div>
@@ -287,17 +330,17 @@ export default function Projects() {
           <div>
             <ul className="flex flex-col items-center relative pt-16">
               <Article
-                title="Adding more soon, thanks for the interest!"
-                img={loading}
+                title="To see the full list of projects, check out my GitHub"
+                img={githubProfile}
                 time="1 min read"
                 date=""
-                link="https://github.com/lilxyzz/"
+                link="https://github.com/jeremy-daa?tab=repositories"
               />
             </ul>
 
             <div className="mt-2 flex items-center justify-between gap-3 grid-cols-2">
               <Link
-                href="/articles/"
+                href="/stories/"
                 target={"_self"}
                 className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
             capitalize text-dark hover:border-light hover:bg-dark hover:text-light 
@@ -305,7 +348,7 @@ export default function Projects() {
             md:p-2 md:px-4 md:text-base
              `}
               >
-                View Articles
+                View My Stories
               </Link>
               <Link
                 href="/about/"

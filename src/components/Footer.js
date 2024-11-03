@@ -21,7 +21,7 @@ const Footer = () => {
           <li>
             <Link
               href="/"
-              className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
             >
               Home
             </Link>
@@ -29,7 +29,7 @@ const Footer = () => {
           <li>
             <Link
               href="/about"
-              className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
             >
               About
             </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
           <li>
             <Link
               href="/projects"
-              className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
             >
               Projects
             </Link>
@@ -45,14 +45,22 @@ const Footer = () => {
           <li>
             <Link
               href="/stories"
-              className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
             >
-              Stories & Solutions
+              Stories
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact"
+              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
+            >
+              Contact
             </Link>
           </li>
         </ul>
       </div>
-      <p className="block mb-4 text-sm text-center text-slate-500 md:mb-0 border-t border-slate-200 mt-4 pt-4">
+      <p className="block mb-4 text-sm text-center text-dark dark:text-light md:mb-0 border-t border-slate-200 mt-4 pt-4">
         © {new Date().getFullYear()}&nbsp; Made with ❤️ by{" "}
         <a
           href="https://github.com/jeremy-daa/portfolio"

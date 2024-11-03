@@ -11,6 +11,8 @@ import Link from "next/link";
 import { useRef } from "react";
 import TransitionEffect from "@/components/TransitionEffect";
 import { HireMe2 } from "@/components/HireMe2";
+import dbConnect from "@/utils/dbConnect";
+import Post from "@/models/Post";
 
 const FramerImage = motion(Image);
 
@@ -34,7 +36,6 @@ const MovingImg = ({ title, img, link }) => {
     <>
       <Link
         href={link}
-        target={"_blank"}
         className="relative"
         onMouseMove={handleMouse}
         onMouseLeave={handleMouseLeave}
@@ -56,6 +57,8 @@ const MovingImg = ({ title, img, link }) => {
           sizes="(max-width: 768px) 60vw,
               (max-width: 1200px) 40vw,
               33vw"
+          width={700}
+          height={700}
         />
       </Link>
     </>
@@ -84,7 +87,45 @@ const Article = ({ img, title, date, link }) => {
   );
 };
 
-const FeaturedArticle = ({ img, title, time, summary, link }) => {
+const FeaturedArticle = ({ img, title, date, content, link }) => {
+  const getReadTime = () => {
+    const wordsPerMinute = 200;
+    const words = content.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+
+    return `${minutes} min read`;
+  };
+  const formatDate = () => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(date).toLocaleDateString("en-US", options);
+  };
+  const removeMarkdown = (text) => {
+    if (!text) return "";
+
+    // Patterns to match Markdown syntax
+    const rules = [
+      /\*\*(.*?)\*\*/g, // bold **text**
+      /__(.*?)__/g, // bold __text__
+      /\*(.*?)\*/g, // italic *text*
+      /_(.*?)_/g, // italic _text_
+      /~~(.*?)~~/g, // strikethrough ~~text~~
+      /`([^`]+)`/g, // inline code `code`
+      /```[\s\S]*?```/g, // code blocks ```code```
+      /!\[(.*?)\]\((.*?)\)/g, // images ![alt text](url)
+      /\[(.*?)\]\((.*?)\)/g, // links [text](url)
+      /^>[\s\S]*?$/gm, // blockquotes > text
+      /#+\s+(.*)/g, // headings # heading
+      /^- |\* |(\d+)\. /gm, // lists - item, * item, 1. item
+      /^(\s*)\|.*\|(\s*)$/gm, // tables | column1 | column2 |
+    ];
+
+    // Apply each rule to remove Markdown syntax
+    rules.forEach((rule) => {
+      text = text.replace(rule, "$1"); // Keep the content within capturing groups
+    });
+
+    return text.trim();
+  };
   return (
     <li
       className="relative w-full p-4 col-span-1 bg-light border border-dark border-solid rounded-2xl 
@@ -99,11 +140,7 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
          dark:bg-light  md:-right-2 md:w-[101%] xs:h-[102%]
         xs:rounded-[1.5rem]  "
       />
-      <Link
-        href={link}
-        target={"_blank"}
-        className="inline-block rounded-lg overflow-hidden w-full"
-      >
+      <div className="inline-block rounded-lg overflow-hidden w-full">
         <FramerImage
           src={img}
           alt={title}
@@ -112,30 +149,64 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
           transition={{ duration: 0.2 }}
           sizes="100vw"
           priority
+          width={1000}
+          height={1000}
         />
-      </Link>
-
-      <Link href={link} target={"_blank"}>
-        <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg">
-          {title}
-        </h2>
-      </Link>
-      <p className="text-sm  mb-2">{summary}</p>
-      <span className="text-primary font-semibold dark:text-primaryDark">
-        {time}
-      </span>
+      </div>
+      <div className="flex flex-col justify-between gap-5">
+        <Link href={link}>
+          <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg">
+            {title}
+          </h2>
+        </Link>
+        <p className="text-sm dark:text-light">
+          {removeMarkdown(content.slice(0, 200))} ...
+        </p>
+        <div className="flex flex-col gap-2">
+          <h3 className="text-dark dark:text-light font-semibold text-sm">
+            Published on: {formatDate()}
+          </h3>
+          <h3 className="text-primary font-semibold dark:text-primaryDark">
+            {getReadTime()}
+          </h3>
+        </div>
+      </div>
     </li>
   );
 };
+export const getServerSideProps = async () => {
+  await dbConnect();
 
-export default function Articles() {
+  let posts = await Post.find();
+  posts = JSON.parse(JSON.stringify(posts));
+  posts.reverse();
+  let lastTwo = posts.slice(0, 2);
+  return {
+    props: {
+      posts,
+      lastTwo,
+    },
+  };
+};
+export default function Articles({ posts, lastTwo }) {
+  const getReadTime = (content) => {
+    const wordsPerMinute = 200;
+    const words = content.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+
+    return `${minutes} min read`;
+  };
+  const formatDate = (date) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(date).toLocaleDateString("en-US", options);
+  };
   return (
     <>
       <Head>
-        <title>Development Articles | By NexTemp</title>
+        <title>Ermiyas Dagnachew Amberbir | Inspiring Ideas & Updates</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Explore my Stories page. Dive into thought-provoking ideas, personal insights, and updates that inspire change and foster connection. Join the journey of innovation and creativity!"
         />
       </Head>
       <TransitionEffect />
@@ -144,25 +215,20 @@ export default function Articles() {
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Words Influence the World 🌎"
+            text="Echoes of Ideas & Inspirations 💡"
             className="!text-8xl !leading-tight mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
           <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
-            <FeaturedArticle
-              img={blog1}
-              title="Unlocking the Power of Gatsby & Netlify"
-              time="2 min read"
-              summary="Image-centric Gatsby theme for publishers, portfolio, photographers blogs and more."
-              link="https://travislord.xyz/articles/guide-to-clay-theme-gatsby-web-app"
-            />
-
-            <FeaturedArticle
-              img={blog2}
-              title="My MacBook Setup For Development 2024"
-              time="4 min read"
-              summary="As we step into another year of exciting journeys, I figured it was the perfect moment to unveil the newest adjustments and tools I'm using in my MacBook setup."
-              link="https://travislord.xyz/articles/top-macbook-setup-tips-for-2024"
-            />
+            {lastTwo.map((post, index) => (
+              <FeaturedArticle
+                key={index}
+                img={post.image}
+                title={post.title}
+                date={post.createdAt}
+                content={post.content}
+                link={`/stories/${post.slug}`}
+              />
+            ))}
           </ul>
 
           <h2 className="font-bold text-4xl w-full text-center mt-32 my-16">
@@ -170,13 +236,16 @@ export default function Articles() {
           </h2>
 
           <ul className="flex flex-col items-center relative">
-            <Article
-              title="Adding more soon, thanks for the interest!"
-              img={loading}
-              time="1 min read"
-              date=""
-              link="https://github.com/lilxyzz/"
-            />
+            {posts.map((post, index) => (
+              <Article
+                key={index}
+                title={post.title}
+                img={post.image}
+                time={getReadTime(post.content)}
+                date={formatDate(post.createdAt)}
+                link={`/stories/${post.slug}`}
+              />
+            ))}
           </ul>
 
           <div className="mt-2 flex items-center justify-between gap-3 grid-cols-2">

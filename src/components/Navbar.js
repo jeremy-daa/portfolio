@@ -76,7 +76,7 @@ const Navbar = () => {
 
   return (
     <header
-      className="w-full flex items-center justify-between px-32 pt-10 pb-8 font-medium dark:text-light
+      className="w-full flex items-center justify-between px-32 pt-6 pb-8 font-medium dark:text-light
     lg:px-16 relative z-1 md:px-12 sm:px-8
     "
     >
@@ -110,18 +110,14 @@ const Navbar = () => {
           <CustomLink className="mr-4" href="/" title="Home" />
           <CustomLink className="mx-4" href="/about" title="About" />
           <CustomLink className="mx-4" href="/projects" title="Projects" />
-          <CustomLink
-            className="ml-4"
-            href="/stories"
-            title="Stories & Solutions"
-          />
+          <CustomLink className="ml-4" href="/stories" title="Stories" />
+          <CustomLink className="ml-4" href="/contact" title="Contact" />
         </nav>
         <nav
           className="flex items-center justify-center flex-wrap lg:mt-2
       "
         >
           <motion.a
-            target={"_blank"}
             className="w-9 mx-2 bg-light rounded-full p-1"
             href="https://github.com/jeremy-daa"
             whileHover={{ y: -2 }}
@@ -132,7 +128,6 @@ const Navbar = () => {
           </motion.a>
 
           <motion.a
-            target={"_blank"}
             className="w-9 mx-2 bg-light rounded-full p-1"
             href="https://www.linkedin.com/in/ermiyas-dagnachew-amberbir-0b3883244/"
             whileHover={{ y: -2 }}
@@ -143,7 +138,6 @@ const Navbar = () => {
           </motion.a>
 
           <motion.a
-            target={"_blank"}
             className="w-9 mx-2 bg-light rounded-full p-1"
             href="https://www.instagram.com/yirmeyahu.63/profilecard/?igsh=MWljeWs4djFjOTR3NA=="
             whileHover={{ y: -2 }}
@@ -153,7 +147,6 @@ const Navbar = () => {
             <InstagramIcon />
           </motion.a>
           <motion.a
-            target={"_blank"}
             className="w-9 mx-2 bg-light rounded-full p-1"
             href="https://wa.me/qr/5HBSDXMPGAHNC1"
             whileHover={{ y: -2 }}
@@ -209,8 +202,8 @@ const Navbar = () => {
             <CustomMobileLink
               toggle={handleClick}
               className="ml-4 lg:m-0 lg:my-2"
-              href="/articles"
-              title="Articles"
+              href="/stories"
+              title="Stories"
             />
             <CustomMobileLink
               toggle={handleClick}
@@ -224,7 +217,6 @@ const Navbar = () => {
       "
           >
             <motion.a
-              target={"_blank"}
               className="w-7 mx-3 bg-light rounded-full p-1"
               href="https://github.com/jeremy-daa"
               whileHover={{ y: -2 }}
@@ -235,7 +227,6 @@ const Navbar = () => {
             </motion.a>
 
             <motion.a
-              target={"_blank"}
               className="w-7 mx-3 bg-light rounded-full p-1"
               href="https://www.linkedin.com/in/ermiyas-dagnachew-amberbir-0b3883244/"
               whileHover={{ y: -2 }}
@@ -246,7 +237,6 @@ const Navbar = () => {
             </motion.a>
 
             <motion.a
-              target={"_blank"}
               className="w-7 mx-3 bg-light rounded-full p-1"
               href="https://www.instagram.com/yirmeyahu.63/profilecard/?igsh=MWljeWs4djFjOTR3NA=="
               whileHover={{ y: -2 }}
@@ -256,7 +246,6 @@ const Navbar = () => {
               <InstagramIcon />
             </motion.a>
             <motion.a
-              target={"_blank"}
               className="w-7 mx-3 bg-light rounded-full p-1"
               href="https://wa.me/qr/5HBSDXMPGAHNC1"
               whileHover={{ y: -2 }}
@@ -282,7 +271,7 @@ const Navbar = () => {
         </motion.div>
       ) : null}
 
-      <div className="absolute left-[50%] top-2 translate-x-[-50%] ">
+      <div className="absolute left-[50%] translate-x-[-50%] ">
         <Logo />
       </div>
     </header>

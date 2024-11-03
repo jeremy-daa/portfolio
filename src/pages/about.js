@@ -83,8 +83,9 @@ export default function About() {
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Fueling Dreams with the Heart of Ethiopia 🔥"
-            className="mb-16 !text-7xl !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+            text="Fueling Dreams with the Heart of Ethiopia "
+            className="mb-16 !text-[85px] !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+            et
           />
 
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
@@ -127,8 +128,8 @@ export default function About() {
                 resources.
               </p>
               <p className="my-4 font-medium">
-                P.S. I enjoy shooting hoops with friends on weekends whenever I
-                can 🏀.
+                P.S. I enjoy shooting hoops with friends on the weekends
+                whenever I can 🏀.
               </p>
             </div>
             <div
@@ -138,7 +139,7 @@ export default function About() {
             "
             >
               <div
-                className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%]  rounded-[2rem] rounded-br-3xl 
+                className="absolute top-0 -right-3 -z-10 h-[103%] w-[102%]  rounded-[2rem] rounded-br-3xl 
                 bg-dark
         dark:bg-light  "
               />

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const ViewCount = () => {
   const [visits, setVisits] = React.useState(null);
@@ -41,40 +42,10 @@ const ViewCount = () => {
           transition: "all 1s ease",
         }}
       >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 absolute -right-[10px] -top-[10px] cursor-pointer "
-          style={{
-            scale: visible ? 1.5 : 0,
-            transition: "all 0.3s ease",
-          }}
+        <AiOutlineCloseCircle
+          className="w-7 h-7 absolute -right-[10px] -top-[10px] cursor-pointer text-light bg-slate-900 rounded-full p-1"
           onClick={() => setVisible(false)}
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            {" "}
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="#1C274C"
-              stroke-width="1.5"
-            ></circle>{" "}
-            <path
-              d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5"
-              stroke="#1C274C"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            ></path>{" "}
-          </g>
-        </svg>
+        />
         <h5 className="text-base flex items-center gap-2">
           {" "}
           <svg

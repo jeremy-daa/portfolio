@@ -21,7 +21,7 @@ const Footer = () => {
           <li>
             <Link
               href="/"
-              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light font-semibold hover:text-slideGreen focus:text-slideGreen text-sm"
             >
               Home
             </Link>
@@ -29,7 +29,7 @@ const Footer = () => {
           <li>
             <Link
               href="/about"
-              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light font-semibold hover:text-slideGreen focus:text-slideGreen text-sm"
             >
               About
             </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
           <li>
             <Link
               href="/projects"
-              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light font-semibold hover:text-slideGreen focus:text-slideGreen text-sm"
             >
               Projects
             </Link>
@@ -45,7 +45,7 @@ const Footer = () => {
           <li>
             <Link
               href="/stories"
-              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light font-semibold hover:text-slideGreen focus:text-slideGreen text-sm"
             >
               Stories
             </Link>
@@ -53,14 +53,14 @@ const Footer = () => {
           <li>
             <Link
               href="/contact"
-              className="text-dark dark:text-light hover:text-slate-500 focus:text-slate-500 text-sm"
+              className="text-dark dark:text-light font-semibold hover:text-slideGreen focus:text-slideGreen text-sm"
             >
               Contact
             </Link>
           </li>
         </ul>
       </div>
-      <p className="block mb-4 text-sm text-center text-dark dark:text-light md:mb-0 border-t border-slate-200 mt-4 pt-4">
+      <p className="block mb-4 text-sm text-center text-dark dark:text-light md:mb-0 border-t border-slate-200 mt-4 pt-4 font-semibold">
         © {new Date().getFullYear()}&nbsp; Made with ❤️ by{" "}
         <a
           href="https://github.com/jeremy-daa/portfolio"

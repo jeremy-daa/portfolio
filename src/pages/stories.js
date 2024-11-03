@@ -211,7 +211,7 @@ export default function Articles({ posts, lastTwo }) {
       </Head>
       <TransitionEffect />
       <main
-        className={`w-full mb-16 flex flex-col items-center justify-center dark:text-light overflow-hidden`}
+        className={`mt-16 w-full mb-16 flex flex-col items-center justify-center dark:text-light overflow-hidden`}
       >
         <Layout className="pt-16">
           <AnimatedText

@@ -191,8 +191,8 @@ export default function About() {
                 </h3>
               </div>
             </div>
-            <HireMe2 />
           </div>
+          <HireMe2 />
 
           <Skills />
           <Experience />
